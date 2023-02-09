@@ -33,17 +33,25 @@
 // console.log(arr)
 // console.log(arr1)
 
-function minMinMax(array) {
-    // let min = +[...array].sort((a, b) => a - b).splice(0,1);
-    // let max = +[...array].sort((a, b) => b - a).splice(0,1);
-    let min = Math.min(...array)
-    let max = Math.max(...array)
-    let num = [];
-    for(let i = min+1; i <max; i++){
-        num.push(i);
-    }
-    let middle =  +num.filter(el => ![...array].includes(el)).splice(0, 1);
-    return [min, middle, max];
-}
+// function minMinMax(array) {
+//     // let min = +[...array].sort((a, b) => a - b).splice(0,1);
+//     // let max = +[...array].sort((a, b) => b - a).splice(0,1);
+//     let min = Math.min(...array)
+//     let max = Math.max(...array)
+//     let num = [];
+//     for(let i = min+1; i <max; i++){
+//         num.push(i);
+//     }
+//     let middle =  +num.filter(el => ![...array].includes(el)).splice(0, 1);
+//     return [min, middle, max];
+// }
+//
+// console.log(minMinMax([0, 2, 4, 5]));
 
-console.log(minMinMax([0, 2, 4, 5]));
+//Хитрый цикл
+const arr = [1,2,3];
+for (i=1;i<arr.length;arr[i++]=1){
+    console.log(i)
+}
+console.log(arr)//Что выведет консоль?
+
