@@ -1,0 +1,34 @@
+//есть функция с кучей аргументов. с помощью каррирования мы можем уменьшить
+    // количество аргументов путем создания нескольких раз последовательных функций
+    let out = document.querySelector('.out');
+    function t(tag){
+        return function (text){
+            return `<${tag}>${text}</${tag}>`
+        }
+    }
+    let div = t('div');
+    let p = t('p')
+
+    let elem = div('Hello')
+    let elem2=p('Some text')
+    console.log(elem)
+    console.log(elem2)
+
+
+
+    function curry(f) { // curry(f) выполняет каррирование
+        return function(a) {
+            return function(b) {
+                return f(a, b);
+            };
+        };
+    }
+
+    // использование
+    function sum(a, b) {
+        return a + b;
+    }
+
+    let curriedSum = curry(sum);
+
+    console.log((curriedSum(1)(2))); // 3
