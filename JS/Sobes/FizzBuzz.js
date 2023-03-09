@@ -22,6 +22,7 @@
 //     }
 // }
 //2 вариант
+
 function isFizz(n) {
     if(n%3===0){
         return true
